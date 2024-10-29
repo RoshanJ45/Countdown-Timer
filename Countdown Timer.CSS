@@ -1,0 +1,60 @@
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+body {
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+background: radial-gradient(circle, #1a1a2e, #16213e);
+font-family: 'Poppins', sans-serif;
+}
+.timer {
+position: relative;
+width: 280px;
+height: 280px;
+border-radius: 50%;
+background: linear-gradient(135deg, #141e30, #243b55);
+box-shadow: inset 0 0 15px #00000080, 0 0 20px #6a82fb, 0 0 30px #fc5c7d;
+}
+.circle {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+clip-path: circle(50% at 50% 50%);
+transform: rotate(-90deg);
+}
+.circle div {
+width: 100%;
+height: 100%;
+border-radius: 50%;
+background: conic-gradient(#6a82fb calc(var(--percent) * 1%), transparent 0%);
+transition: background 1ms linear;
+}
+.time {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+font-size: 2.2rem;
+color: #fff;
+text-align: center;
+text-shadow: 0 0 10px #ffffffcc;
+animation: glow 1s ease-in-out infinite alternate;
+}
+@keyframes glow {
+from {
+text-shadow: 0 0 5px #ffffff99;
+}
+to {
+text-shadow: 0 0 15px #ffffff;
+}
+}
+.milliseconds {
+font-size: 1rem;
+margin-top: 5px;
+}
